@@ -1,10 +1,13 @@
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
-.container {
+body {
     background: hsl(210, 10%, 33%);
+}
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +17,8 @@
 
 .card {
     width: 100%;
-    max-width: 375px;
+    min-width: 375px;
+    max-width: 600px;
     background: white;
     font-family: "Bai Jamjuree", sans-serif;
     
@@ -68,7 +72,7 @@ header {
 .buttons {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 85%;
     align-items: center;
     justify-content: center;
     margin-bottom: 7rem;
@@ -82,7 +86,7 @@ header {
     border-radius: 25px;
     font-size: 13px;
     margin-bottom: 1rem;
-    width: 80%;
+    width: 90%;
     border: none;
     cursor: pointer;
 }
@@ -94,7 +98,7 @@ header {
     padding: .75rem 1rem;
     border-radius: 25px;
     font-size: 13px;
-    width: 80%;
+    width: 90%;
     border: none;
     cursor: pointer;
 }
@@ -113,15 +117,10 @@ header {
     opacity: 0.7;
 }
 
-.computer img {
+.computer-img {
     cursor: pointer;
     width: 90%;
     /* align-items: center; */
-}
-
-.computer img:hover {
-    transform: scale(1.08);
-    transition: 0.8s;
 }
 
 .computer {
@@ -135,12 +134,17 @@ header {
 .search {
     display: flex;
     flex-direction: column;
-    text-align: center;
+   text-align: center;
+    /* text-align: center; */
     margin-top: 2rem;
     /* margin: 2rem 0 6rem 0; */
     padding: 0 3rem;
 }
 
+/* .search-contents {
+    display: flex;
+    flex-direction: column;
+} */
 .search-contents h5 {
     color: hsl(210, 10%, 33%);
     font-size: 16px;
@@ -193,10 +197,11 @@ header {
     align-items: center;
     gap: 3rem;
     margin: 5rem;
+    width: 80%;
 }
 
 .company-list img {
-    width: 80px;
+    width: 100px;
 }
 
 footer {
@@ -239,12 +244,14 @@ footer {
     text-decoration: none;
     color: hsl(201, 11%, 66%);
     cursor: pointer;
+    padding-bottom: .15rem;
 }
 
 .site-info a:hover {
     color: hsl(210, 10%, 33%);
     transform: scale(1.05);
     transition: 0.8s;
+    border-bottom: 2px solid hsl(210, 10%, 33%);
 }
 
 .socials {
@@ -260,22 +267,15 @@ footer {
     transition: 0.6s;
 }
 
-@media (min-width:500px) {
-    .search-contents p {
-        text-align: left;
+
+@media (min-width:700px) {
+
+    .container {
+        max-width: 850px;
     }
-
-    .ios, .mac {
-        width: 100%;
-        margin-bottom: 0;
-    }
-}
-
-
-@media (min-width:500px) {
 
     .card {
-        max-width: 900px;
+        max-width: 850px;
     }
 
     header {
@@ -288,8 +288,13 @@ footer {
 
     .buttons {
         flex-direction: row;
-        width: 50%;
+        width: 60%;
         gap: 2rem;
+        margin-bottom: 5rem;
+    }
+
+    .mac {
+        margin-top: -1rem;
     }
 
     .computer {
@@ -297,28 +302,34 @@ footer {
         align-items: center;
         justify-content: center;
         gap: .5rem;
+        overflow: hidden;
     }
 
-    .computer img {
-        width: 100%;
-        height: 100%;
+    .computer-img {
+        display: block;
+        transform: translateX(-5%);
+        width: 105%;
+        height: auto;
+    }
+
+    .img-width {
+        width: 60%;
+    }
+
+    .search-contents {
+        margin-right: 2rem;
+        align-content: flex-start;
     }
 
     .search-contents h5 {
         font-size: 14px;
-        margin-bottom: .5rem;
-    }
-
-    .search-contents p {
-        margin-bottom: 1rem;
-    }
-
-    .search-contents h5, p {
+        margin-bottom: .25rem;
         text-align: left;
     }
 
-    .access-paragraph {
-        font-size: px;
+    .search-contents p {
+        text-align: left;
+        padding-right: 2rem;
     }
 
     .devices {
@@ -331,10 +342,11 @@ footer {
         gap: 2rem;
         align-items: center;
         justify-content: center;
-        width: 90%;
+        width: 80%;
     }
 
-    .contents h4, p{
+    .contents h4, 
+    .contents p{
         text-align: center;
         width: 90%;
     }
@@ -342,17 +354,23 @@ footer {
    .company-list {
     flex-direction: row;
     justify-content: space-around;
-    width: 90%;
-    margin: 5rem 0 5rem 0;
+    width: 75%;
+   }
+
+   .company-list img {
+    width: 100%;
    }
 
    .footer {
     flex-direction: row;
-    justify-content: space-between;
    }
 
    .site-info {
+    border: 1px solid red;
     flex-direction: row;
+    justify-content: flex-start;
+    width: 50%;
+    /* margin-left: 3rem; */
    }
 
    .site-info img {
@@ -360,26 +378,18 @@ footer {
     height: 40px;
    }
 
-   .site-info {
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    margin-left: 4rem;
-    flex-wrap: wrap;
-   }
-
    .nav {
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 50%;
+    align-content: flex-start;
+
+    width: 70%;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
    }
 
    .socials {
     gap: 1rem;
-    margin-right: 3rem;
+    margin-right: 5rem;
    }
 
 }
